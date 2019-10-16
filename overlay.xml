@@ -1,5 +1,5 @@
 <repositories version="1.0">
-    <repo priority="-900" status="unofficial">
+    <repo priority="50" status="unofficial">
         <name>blx32</name>
         <description>Personal overlay for Gabriel Moura</description>
         <homepage>http://srmoura.com.br</homepage>
@@ -7,8 +7,7 @@
             <email>develop@srlura.com.br</email>
             <name>Gabriel Moura</name>
         </owner>
-	<source type="git">git@code.funtoo.org:7999/~blx32/blx32-overlay.git</source>
-	<!--https://code.funtoo.org/bitbucket/scm/~blx32/blx32-overlay.git-->
-        <feed>https://github.com/zigford/gentoo-zigford/commits/master.atom</feed>
+	<source type="git">git@github.com:gabrielmoura/blx32-overlay.git</source>
+        <feed>https://github.com/gabrielmoura/blx32-overlay/commits/master.atom</feed>
     </repo>
 </repositories>
