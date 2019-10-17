@@ -7,7 +7,7 @@
             <email>develop@srlura.com.br</email>
             <name>Gabriel Moura</name>
         </owner>
-	<source type="git">https://github.com/gabrielmoura/blx32-overlay.git</source>
+	<source type="git">git@github.com:gabrielmoura/blx32-overlay.git</source>
         <feed>https://github.com/gabrielmoura/blx32-overlay/commits/master.atom</feed>
     </repo>
 </repositories>

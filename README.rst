@@ -1,47 +1,24 @@
-Skeleton Overlay
-================
+# How to use this overlay
 
-This is a "skeleton" overlay -- an empty overlay to use as the starting point
-for collaborating with Funtoo Linux. To start using the overlay, perform the
-following steps:
+## with local overlays
 
-1. Review COPYRIGHT.txt and LICENSE.txt. What is provide are reasonable defaults,
-   using the GNU General Public License Version 2. If you are using existing ebuilds from
-   Gentoo Linux and/or Funtoo LInux, then the copyright information is probably
-   accurate. Otherwise, you will want to change the copyright notice to read:
+[Local overlays](https://wiki.gentoo.org/wiki/Overlay/Local_overlay) should be managed via `/etc/portage/repos.conf/`.
+To enable this overlay make sure you are using a recent Portage version (at least `2.2.14`), and create a `/etc/portage/repos.conf/brother-overlay.conf` file containing precisely:
 
-::
+```
+[brother-overlay]
+location = /usr/local/portage/blx32
+sync-type = git
+sync-uri = https://github.com/gabrielmoura/blx32-overlay.git
+priority=9999
+```
 
-  Copyright 2014 Firstname Lastname. Distributed under the terms of the GNU
-  General Public License version 2.
+Afterwards, simply run `emerge --sync`, and Portage should seamlessly make all our ebuilds available.
 
-2. Modify ``profiles/repo_name`` and enter a single-word name for your repository.
+## with layman
 
-3. Edit ``metadata/layout.conf`` and change the word "skeleton" in the repo-name line
-   to the name of the repository.
+Invoke the following:
 
-4. Modify this README.rst file to accurately reflect how to contribute. You should
-   be able to remove this top part and simply use what follows it as a template.
-
-5. Add ebuilds :)
-
-
-=================================
-How to Contribute to this Overlay
-=================================
-
-:author: Daniel Robbins
-:contact: drobbins@funtoo.org
-:language: English
-
-Greetings GitHub Users!
-=======================
-
-.. _bugs.funtoo.org: https://bugs.funtoo.org
-
-To contribute bug reports for this overlay, you can open up a GitHub issue or send
-me a pull request.
-
-If you are using ebuilds in this overlay as part of Funtoo Linux (because they are
-merged into the main Funtoo Linux Portage tree, for example,) then
-please also open an issue at `bugs.funtoo.org`_.
+	layman -f -a brother-overlay
+	
+Or read the instructions on the [Gentoo Wiki](http://wiki.gentoo.org/wiki/Layman#Adding_custom_repositories).
