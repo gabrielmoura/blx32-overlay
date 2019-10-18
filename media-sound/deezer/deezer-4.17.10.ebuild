@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="-* ~amd64"
  
 RDEPEND="
-	dev-libs/electron-bin
+	dev-util/electron-bin
 "
 DEPEND="
     dev-haskell/tar
