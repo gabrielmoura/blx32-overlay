@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pinegrow
+Comment=A website development tool for building responsive websites
+Exec=pinegrow
+Icon=pinegrow
+Terminal=false
+StartupNotify=false
+Categories=Application;
