@@ -6,7 +6,7 @@ EAPI=7
 inherit desktop xdg-utils
 
 ELECTRON_SLOT="6.0"
-ELECTRON_V="6.0.6"
+ELECTRON_V="6.0.2"
 MY_PV="${PV/_rc/-rc.}"
 
 DESCRIPTION="A glossy Matrix collaboration client for desktop"
