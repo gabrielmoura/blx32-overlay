@@ -5,7 +5,7 @@
 EAPI=5
 inherit font
 
-MY_PV="1.2.0"
+MY_PV="2.0.0"
 MY_PN="${PN}-${MY_PV}"
 
 DESCRIPTION="123 weather themed icons inspired by Font Awesome and ready for Bootstrap"
@@ -21,5 +21,6 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_PN}"
-FONT_SUFFIX="ttf otf"
-FONT_S="${S}/fonts"
+FONT_SUFFIX="ttf"
+FONT_S="${S}/font"
+
