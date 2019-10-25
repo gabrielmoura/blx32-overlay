@@ -19,7 +19,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND=">=dev-util/electron-bin-${ELECTRON_V}:${ELECTRON_SLOT}"
-DEPEND="net-libs/nodejs[npm]"
+DEPEND="net-libs/nodejs[npm]
+sys-apps/yarn"
 
 S="${WORKDIR}/riot-web-${MY_PV}"
 
