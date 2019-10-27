@@ -31,19 +31,19 @@ S="${WORKDIR}"
 
 src_install() {
 	exeinto /opt/${PN}
-	doexe Popcorn-Time
 
 	insinto /opt/${PN}
-	doins -r src node_modules icudtl.dat locales LICENSE.txt libffmpegsumo.so nw.pak install package.json
+    doins -r *
 
-	dosym /$(get_libdir)/libudev.so.1 /opt/${PN}/libudev.so.0
 	dosym /opt/${PN}/Popcorn-Time /usr/bin/${PN}
+
+	doexe Popcorn-Time
 
 	insinto /usr/share/applications
 	doins "${FILESDIR}"/${PN}.desktop
 
 	insinto /usr/share/pixmaps
-	doins popcorntime.png
+	doins "${FILESDIR}"/${PN}.png
 }
 
 pkg_postinst() {
@@ -53,3 +53,4 @@ pkg_postinst() {
 pkg_postrm() {
 	fdo-mime_desktop_database_update
 }
+
