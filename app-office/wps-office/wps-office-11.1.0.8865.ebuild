@@ -62,7 +62,9 @@ RDEPEND="
 	dev-libs/libgpg-error
 	sys-apps/attr
 "
-DEPEND=""
+DEPEND="
+mui? ( app-office/wps-office-mui )
+"
 BDEPEND=""
 
 S="${WORKDIR}"
