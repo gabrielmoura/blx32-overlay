@@ -1,0 +1,13 @@
+<repositories version="1.0">
+    <repo priority="50" status="unofficial">
+        <name>blx32</name>
+        <description>Personal overlay for Gabriel Moura</description>
+        <homepage>http://srmoura.com.br</homepage>
+        <owner>
+            <email>develop@srmoura.com.br</email>
+            <name>Gabriel Moura</name>
+        </owner>
+	<source> type="git">git@githttps://github.com/gabrielmoura/blx32-overlayt</source>
+        <feed>https://github.com/gabrielmoura/blx32-overlay/commits/master.atom</feed>
+    </repo>
+</repositories>
