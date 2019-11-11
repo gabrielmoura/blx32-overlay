@@ -19,6 +19,6 @@ Afterwards, simply run `emerge --sync`, and Portage should seamlessly make all o
 
 Invoke the following:
 
-	layman -f -a blx32
+	layman -f -o https://raw.githubusercontent.com/gabrielmoura/blx32-overlay/master/layman.xml -a blx32
 	
 Or read the instructions on the [Gentoo Wiki](http://wiki.gentoo.org/wiki/Layman#Adding_custom_repositories).
