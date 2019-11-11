@@ -30,10 +30,10 @@ src_install() {
 	#echo "#!/bin/sh" > deezer
     #echo "exec electron /usr/share/deezer/app.asar \"\$@\"" >> deezer
 
-	install -Dm644 /usr/share/deezer/app.asar "${ED}"/usr/share/deezer/
-    install -Dm644 /usr/share/icons/hicolor/256x256/apps/deezer.png "${ED}"/usr/share/icons/hicolor/256x256/apps/
-    install -Dm644 /usr/share/deezer/systray.png "${ED}"/usr/share/deezer/
-    install -Dm644 /usr/share/applications/deezer.desktop "${ED}"/usr/share/applications/
-    install -Dm755 /usr/bin/deezer "${ED}"/usr/bin/
+	install -Dm644 usr/share/deezer/app.asar "${ED}"/usr/share/deezer/
+    install -Dm644 usr/share/icons/hicolor/256x256/apps/deezer.png "${ED}"/usr/share/icons/hicolor/256x256/apps/
+    install -Dm644 usr/share/deezer/systray.png "${ED}"/usr/share/deezer/
+    install -Dm644 usr/share/applications/deezer.desktop "${ED}"/usr/share/applications/
+    install -Dm755 usr/bin/deezer "${ED}"/usr/bin/
 
 }
