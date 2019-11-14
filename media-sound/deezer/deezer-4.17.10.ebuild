@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="-* ~amd64"
  
 RDEPEND="
-	dev-util/electron-bin
+	dev-util/electron-bin-6.0.2
 "
 DEPEND="${RDEPEND}"
  
