@@ -11,10 +11,11 @@ SLOT="0"
 KEYWORDS="-* ~amd64"
 IUSE="binary"
 
-RDEPEND="
-binary? ( =dev-util/electron-bin-6.0.2 ) || (dev-util/electron)
+DEPEND="
+binary? ( =dev-util/electron-bin-6.0.2 )
+!binary? ( dev-util/electron )
 "
-DEPEND="${RDEPEND}"
+#DEPEND="${RDEPEND}"
 
 S="${WORKDIR}"
 
