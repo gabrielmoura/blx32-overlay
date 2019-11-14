@@ -7,7 +7,7 @@ CATEGORY="dev-util"
 DESCRIPTION="A website development tool for building responsive websites"
 HOMEPAGE="https://pinegrow.com"
 SRC_URI="
-http://download.pinegrow.com/PinegrowLinux64.${PV}.zip
+http://download.pinegrow.com/PinegrowLinux64.5.8.zip
 ${HOMEPAGE}/Pinegrow_EULA.pdf
 ${HOMEPAGE}/favicon.ico"
 #RESTRICT="mirror"
@@ -32,7 +32,7 @@ S="${WORKDIR}"
 
 
 #src_prepare() {
-  #unzip -qqo "PinegrowLinux64.${pkgver}.zip" -d "Pinegrow-${pkgver}"
+#unzip -qqo "PinegrowLinux64.${pkgver}.zip" -d "${ED}"
   #gendesk --pkgname "${PN}" --pkgdesc "${DESCRIPTION}"
 #}
 
