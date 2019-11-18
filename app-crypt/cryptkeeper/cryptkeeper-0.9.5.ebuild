@@ -24,12 +24,10 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 RESTRICT="test"
-
+S="${WORKDIR}"
 PATCHES=(
-	"${FILESDIR}/${P}-binutils-gold.patch"
-	"${FILESDIR}/${P}-fix_cryptkeeper.desktop.patch"
-	"${FILESDIR}/${P}-fix-ftbfs-gcc-4.7-672010.patch"
-	"${FILESDIR}/${P}-is_mounted_overflow_fix.patch"
+	"${FILESDIR}/${P}-fix-linking.patch"
+	"${FILESDIR}/${P}-add-unistd-to-lsof.patch"
 )
 
 DOCS="TODO"
