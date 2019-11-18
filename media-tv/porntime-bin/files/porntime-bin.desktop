@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Porn Time
 Comment=Stream porn movies from torrents. Skip the downloads. Launch, click, watch.
-Exec=porntime %U
+Exec=porntime-bin %U
 Icon=porntime-bin
 Terminal=false
 Type=Application

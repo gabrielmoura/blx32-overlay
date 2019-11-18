@@ -35,9 +35,9 @@ src_install() {
 	insinto /opt/${PN}
     doins -r *
 
-	dosym /opt/${PN}/Porntime /usr/bin/${PN}
+	dosym /opt/${PN}/PornTime /usr/bin/${PN}
 
-	doexe Porntime
+	doexe PornTime
 
 	insinto /usr/share/applications
 	doins "${FILESDIR}"/${PN}.desktop
@@ -53,4 +53,5 @@ pkg_postinst() {
 pkg_postrm() {
 	fdo-mime_desktop_database_update
 }
+
 
