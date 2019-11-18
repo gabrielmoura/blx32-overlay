@@ -5,7 +5,7 @@ DESCRIPTION="A proprietary music streaming service"
 HOMEPAGE="https://www.deezer.com/"
 SRC_URI="
 https://www.deezer.com/desktop/download/artifact/win32/x86/4.17.21/deezer-4.17.21-setup.exe -> deezer-4.17.21-setup.exe
-https://github.com/SibrenVasse/deezer/raw/mpris/node_modules.tar.xz -> ${P}-node_modules.tar.xz" 
+https://github.com/SibrenVasse/deezer/raw/mpris/node_modules.tar.xz -> ${P}-node_modules.tar.xz"
 RESTRICT="mirror"
 
 LICENSE="Copyright (c) 2006-2018 Deezer S.A."
@@ -32,7 +32,7 @@ src_prepare(){
     convert resources/win/app.ico resources/win/deezer.png
 
     cd resources/
-    rm -r app || true
+    #rm -r app || true
     asar extract app.asar app
     # Remove NodeRT from package (-205.72 MiB)
     rm -r app/node_modules/@nodert
@@ -56,7 +56,8 @@ src_prepare(){
     #eapply_user
 
 	#wget https://github.com/SibrenVasse/deezer/raw/mpris/node_modules.tar.xz
-	tar -xvf "${P}-node_modules.tar.xz"
+	tar -xvf "${DISTDIR}/${P}-node_modules.tar.xz"
+
 
     cd ..
     asar pack app app.asar
