@@ -2,18 +2,20 @@ EAPI=5
 inherit eutils
 
 EAP_VERSION='193.5233.18'
-#MY_PV='2017.3'
+MY_PV='2019.2.5'
 
 HOMEPAGE="https://www.jetbrains.com/go/"
 DESCRIPTION="GoLand is a cross-platform IDE built specially for Go developers"
-SRC_URI="https://download.jetbrains.com/go/goland-${EAP_VERSION:-${MY_PV:-${PV}}}.tar.gz"
-
+SRC_URI="
+EAP? ( https://download-cf.jetbrains.com/go/goland-${EAP_VERSION}.tar.gz )
+!EAP? ( https://download-cf.jetbrains.com/go/goland-${MY_PV}.tar.gz )"
+IUSE="EAP"
 if [[ x${EAP_VERSION} = 'x' ]]; then
 	KEYWORDS="x86 amd64"
 else
 	KEYWORDS="~x86 ~amd64"
 fi
-
+LICENSE="IDEA"
 PROGNAME="GoLand"
 
 RESTRICT="strip mirror"

@@ -1,12 +1,14 @@
 EAPI=5
 inherit eutils
 
-EAP_VERSION='193.4099.12'
-#MY_PV='2017.3'
+EAP_VERSION='193.5233.64'
+MY_PV='2019.2.5'
 
 HOMEPAGE="http://www.jetbrains.com/phpstorm/"
 DESCRIPTION="PhpStorm"
-SRC_URI="https://download.jetbrains.com/webide/PhpStorm-${EAP_VERSION:-${MY_PV:-${PV}}}.tar.gz"
+SRC_URI="
+EAP?( https://download-cf.jetbrains.com/webide/PhpStorm-${EAP_VERSION}.tar.gz )
+!EAP?( https://download-cf.jetbrains.com/webide/PhpStorm-${MY_PV}.tar.gz )"
 
 if [[ x${EAP_VERSION} = 'x' ]]; then
 	KEYWORDS="x86 amd64"
@@ -19,6 +21,8 @@ PROGNAME="PHP Storm"
 RESTRICT="strip mirror"
 DEPEND=">=virtual/jre-1.6"
 SLOT="0"
+IUSE="EAP"
+LICENSE="IDEA"
 S=${WORKDIR}
 
 src_install() {
