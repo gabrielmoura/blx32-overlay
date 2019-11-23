@@ -8,11 +8,14 @@ MY_PV="$(ver_cut 4)"
 
 DESCRIPTION="WPS Office is an office productivity suite"
 HOMEPAGE="http://www.wps.cn/product/wpslinux/ http://wps-community.org/"
+# Se o link abaixo não funcionar algum desses irá.
+#http://kdl.cc.ksosoft.com/wps-community/download/${MY_PV}/${PN}_${PV}_amd64.deb
+#
 
 KEYWORDS="amd64"
 
 SRC_URI="
-	amd64? ( http://kdl.cc.ksosoft.com/wps-community/download/${MY_PV}/${PN}_${PV}_amd64.deb )
+	amd64? ( http://sft.if.usp.br/deepin/pool/non-free/w/wps-office/${MY_PV}/${PN}_${PV}_amd64.deb )
 "
 
 SLOT="0"
