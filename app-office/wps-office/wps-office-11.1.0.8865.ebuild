@@ -21,7 +21,7 @@ SRC_URI="
 SLOT="0"
 RESTRICT="strip mirror" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
-IUSE=""
+IUSE="mui"
 
 # Deps got from this (listed in order):
 # rpm -qpR wps-office-10.1.0.5707-1.a21.x86_64.rpm
@@ -67,6 +67,7 @@ RDEPEND="
 "
 DEPEND="
 mui? ( app-office/wps-office-mui )
+dic? ( wps-office-extension-dictionary )
 "
 BDEPEND=""
 
