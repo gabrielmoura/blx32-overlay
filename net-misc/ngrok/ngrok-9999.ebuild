@@ -6,7 +6,8 @@ EAPI=6
 
 
 DESCRIPTION="Introspected tunnels to localhost"
-SRC_URI="https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -> ${P}.zip"
+SRC_URI="amd64?( https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -> ${P}.zip )
+x86?( https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -> ${P}.zip )"
 HOMEPAGE="https://ngrok.com"
 
 LICENSE="Apache-2.0"
