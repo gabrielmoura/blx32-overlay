@@ -4,7 +4,6 @@
 EAPI=7
 inherit unpacker xdg
 
-MY_PV="$(ver_cut 4)"
 
 DESCRIPTION="WPS Office is an office productivity suite"
 HOMEPAGE="http://www.wps.cn/product/wpslinux/ http://wps-community.org/"
@@ -15,13 +14,13 @@ HOMEPAGE="http://www.wps.cn/product/wpslinux/ http://wps-community.org/"
 KEYWORDS="amd64"
 
 SRC_URI="
-	amd64? ( http://sft.if.usp.br/deepin/pool/non-free/w/wps-office/${MY_PV}/${PN}_${PV}_amd64.deb )
+	amd64? ( http://sft.if.usp.br/deepin/pool/non-free/w/wps-office/wps-office_11.1.0.8865_amd64.deb )
 "
 
 SLOT="0"
 RESTRICT="strip mirror" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
-IUSE="mui"
+IUSE="mui dic"
 
 # Deps got from this (listed in order):
 # rpm -qpR wps-office-10.1.0.5707-1.a21.x86_64.rpm
@@ -67,7 +66,7 @@ RDEPEND="
 "
 DEPEND="
 mui? ( app-office/wps-office-mui )
-dic? ( wps-office-extension-dictionary )
+dic? ( app-office/wps-office-extension-dictionary )
 "
 BDEPEND=""
 

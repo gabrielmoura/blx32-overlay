@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 DESCRIPTION="MUI WPS Office"
 HOMEPAGE="http://www.wps.cn/product/wpslinux/ http://wps-community.org/"
@@ -29,7 +29,7 @@ SRC_URI="
 SLOT="0"
 RESTRICT="strip mirror" # mirror as explained at bug #547372
 LICENSE="WPS-EULA"
-IUSE="pt_BR de_DE en_GB es_ES es_MX fr_CA fr_FR ja_JP pl_PL pt_PT ru_RU zh_HK zh_TW th_TH"
+IUSE=" +pt_BR de_DE en_GB es_ES es_MX fr_CA fr_FR ja_JP pl_PL pt_PT ru_RU zh_HK zh_TW th_TH"
 
 RDEPEND="
 	app-arch/p7zip
@@ -39,16 +39,22 @@ DEPEND=""
 BDEPEND=""
 
 S="${WORKDIR}"
-DIR="/opt/kingsoft/wps-office/office6/mui"
+TO_DIR="/opt/kingsoft/wps-office/office6/mui"
 src_install() {
     if use pt_BR ; then
-    USED="pt_BR"
-    insinto "${DIR}"/"${USED}"
+		echo "Isso não esta ac"
+    	_USED="pt_BR"
+		#7z e "${_USED}.7z"
+    	insinto "${TO_DIR}"
 		# remove some extra files for a small livecd install
-		#cd ${DISTDIR}
+		#cd "${DISTDIR}"
 		#7z e pt_BR.7z
-		7z e "${DISTDIR}"/"${USED}.7z"
-        doins -r "${USED}"/*
+		7z -y e "${DISTDIR}/${_USED}.7z" -o "${S}/${_USED}"
+        #mv "${S}/${_USED}"  "${S}/${TO_DIR}"
+		#newins "${S}/*" "${S}/${TO_DIR}"
+	#	rm "${S}/pt_BR/work/{newfile.dps,theme.xml,FourObjectsLayout.xml,Austere.doc,wpp.cfg,default.dpt,ClipArtAndVerticalTextLayout.xml,process.gif,Pinstripe.doc,ettips.qm,Kingsoft_Et_Bubble.xlsx,Cubical.doc,Dots.png}"
+
+		doins -r "${S}/${_USED}"
 	fi
 
     if use pt_PT ; then
