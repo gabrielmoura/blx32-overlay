@@ -29,7 +29,9 @@ dev-python/pyopenssl
 dev-python/unidecode
 dev-python/requests"
 RDEPEND="${DEPEND}"
+src_configure() {
 cp "${FILESDIR}/setup.py" "${WORKDIR}/${P}"
+}
 python_install_all() {
 	distutils-r1_python_install_all
 }
