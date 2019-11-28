@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_7 )
+PYTHON_COMPAT=( {python2_7,python3_{6,7}} )
 
 inherit distutils-r1
 
@@ -29,7 +29,7 @@ dev-python/pyopenssl
 dev-python/unidecode
 dev-python/requests"
 RDEPEND="${DEPEND}"
-python_install_all() {
 cp "${FILESDIR}/setup.py" "${WORKDIR}/${P}"
+python_install_all() {
 	distutils-r1_python_install_all
 }
