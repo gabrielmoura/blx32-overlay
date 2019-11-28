@@ -1,24 +1,26 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
-EAPI=6
+EAPI=7
 
+MY_PN="${PN/-bin/}"
+BASE_URI="https://bin.equinox.io/c/4VmDzA7iaHb/${MY_PN}-stable-linux-_arch_.zip"
 
-DESCRIPTION="Introspected tunnels to localhost"
-SRC_URI="amd64?( https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -> ${P}.zip )
-x86?( https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -> ${P}.zip )"
-HOMEPAGE="https://ngrok.com"
+DESCRIPTION="Secure introspected tunnels to localhost"
+HOMEPAGE="https://ngrok.com/"
+SRC_URI="amd64? ( ${BASE_URI/_arch_/amd64} )
+	arm? ( ${BASE_URI/_arch_/arm} )
+	arm64? ( ${BASE_URI/_arch_/arm64} )
+	x86? ( ${BASE_URI/_arch_/386} )"
 
-LICENSE="Apache-2.0"
+LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~x86"
 IUSE=""
 
-DEPEND="app-arch/unzip"
-src_unpack(){
-	unpack ${A}
-}
+RESTRICT="mirror"
+
+S="${WORKDIR}"
 
 src_install() {
 	dobin ngrok
