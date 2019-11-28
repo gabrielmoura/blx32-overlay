@@ -22,10 +22,14 @@ fi
 RESTRICT="mirror"
 IUSE=""
 SLOT="0"
-#depends=('python' 'python-requests' 'python-colorama' 'python-unidecode' 'python-six' 'python-pyopenssl')
-#DEPEND=""
-#RDEPEND=""
 
+DEPEND="dev-python/colorama
+dev-python/six
+dev-python/pyopenssl
+dev-python/unidecode
+dev-python/requests"
+RDEPEND="${DEPEND}"
 python_install_all() {
+cp "${FILESDIR}/setup.py" "${WORKDIR}/${P}"
 	distutils-r1_python_install_all
 }
