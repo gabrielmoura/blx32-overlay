@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_7 )
+PYTHON_COMPAT=( {python2_7,python3_{6,7}} )
 
 inherit distutils-r1
 
@@ -22,10 +22,14 @@ fi
 RESTRICT="mirror"
 IUSE=""
 SLOT="0"
-#depends=('python' 'python-requests' 'python-colorama' 'python-unidecode' 'python-six' 'python-pyopenssl')
-#DEPEND=""
-#RDEPEND=""
 
+DEPEND="dev-python/colorama
+dev-python/six
+dev-python/pyopenssl
+dev-python/unidecode
+dev-python/requests"
+RDEPEND="${DEPEND}"
+cp "${FILESDIR}/setup.py" "${WORKDIR}/${P}"
 python_install_all() {
 	distutils-r1_python_install_all
 }
