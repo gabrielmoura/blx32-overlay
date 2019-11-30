@@ -6,7 +6,7 @@ HOMEPAGE="https://www.deezer.com/"
 SRC_URI="${SRC_URI_BASE}/deezer-4.18.0-1-any.pkg.tar.xz -> ${P}-x64.tar.xz"
 RESTRICT="mirror"
 
-LICENSE="Copyright (c) 2006-2018 Deezer S.A."
+LICENSE="Deezer"
 SLOT="0"
 KEYWORDS="-* ~amd64"
 IUSE="binary"
