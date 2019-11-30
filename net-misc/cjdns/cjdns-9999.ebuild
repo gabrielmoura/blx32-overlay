@@ -6,11 +6,13 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{4,5,6,7} )
 
-inherit linux-info systemd python-single-r1 flag-o-matic
+inherit linux-info systemd python-single-r1 flag-o-matic git-r3
 
 DESCRIPTION="encrypted IPv6 using public-key cryptography for allocation and DHT for routing"
 HOMEPAGE="https://github.com/cjdelisle/cjdns"
-SRC_URI="https://github.com/cjdelisle/cjdns/archive/cjdns-v${PV}.tar.gz"
+EGIT_REPO_URI="${HOMEPAGE}.git"
+#SRC_URI="https://github.com/cjdelisle/cjdns/archive/cjdns-v${PV}.tar.gz"
+
 LICENSE="GPL-3"
 
 SLOT="0"
@@ -19,7 +21,7 @@ IUSE=""
 
 S="${WORKDIR}/cjdns-cjdns-v${PV}"
 
-PATCHES=( "${FILESDIR}/${PN}-fix_systemd_units.patch" )
+#PATCHES=( "${FILESDIR}/${PN}-fix_systemd_units.patch" )
 DOCS=( "README.md" "doc" )
 
 pkg_setup() {
