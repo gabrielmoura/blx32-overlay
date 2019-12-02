@@ -3,7 +3,7 @@ EAPI=7
 SRC_URI_BASE="https://github.com/gabrielmoura/blx32-overlay/releases/download"
 DESCRIPTION="A proprietary music streaming service"
 HOMEPAGE="https://www.deezer.com/"
-SRC_URI="${SRC_URI_BASE}/${PN}/deezer-4.17.1-1-any.pkg.tar.xz -> ${P}-x64.tar.xz"
+SRC_URI="${SRC_URI_BASE}/${PN}/deezer-4.18.0.tar.xz -> ${P}-x64.tar.xz"
 RESTRICT="mirror"
 
 LICENSE="Deezer"
