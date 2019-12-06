@@ -24,16 +24,19 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="+widevine"
+IUSE="+widevine +bin"
 
 DEPEND="
 	>=dev-qt/qtquickcontrols2-5.9:5
 	>=dev-qt/qtquickcontrols-5.9:5[widgets]
-	>=dev-qt/qtwebengine-5.9:5[-bindist,widgets]
+
+	!bin? ( >=dev-qt/qtwebengine-5.9:5[-bindist,widgets] )
+	bin? ( >=dev-qt/qtwebengine-bin-5.9:5 )
 	>=dev-qt/qttranslations-5.9:5
 	>=dev-qt/qtgraphicaleffects-5.9:5
 	dev-libs/libevent
 	media-libs/mesa
+	dev-qt/qtlocation
 "
 
 RDEPEND="
